@@ -1,5 +1,5 @@
 import { Box, Container, Typography, Stack } from "@mui/material"
-import { Skill } from "./Skill"
+import { Skill } from "../components/Skill"
 
 export const StackContainer = ({stack=[]}) => {
   return (

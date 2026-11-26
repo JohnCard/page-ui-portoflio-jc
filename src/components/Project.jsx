@@ -1,10 +1,9 @@
 import { Box, Grid, Stack, Typography } from "@mui/material"
-import dev_project from '../assets/wev_develop.avif'
 import LaunchIcon from '@mui/icons-material/Launch';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
 export const Project = ({project}) => {
-    const { name, text, stack, link_demo, github_repo } = project
+    const { name, text, src, stack, link_demo, github_repo } = project
   return (
     <Grid
         size={{
@@ -19,23 +18,30 @@ export const Project = ({project}) => {
     >
         <Box
             component={'img'}
-            width={'100%'}
+            width='100%'
             height={210}
-            src={dev_project}
+            src={src}
             alt={name}
         />
         <Stack
             spacing={1}
             sx={{
-                p: 3
+                p: 3,
+                maxWidth: 450,
+                mx: 'auto'
             }}
         >
             <Typography component={'h5'} variant="h6">{name}</Typography>
             <Typography
                 component={'p'}
-                variant="body1"
                 color="textSecondary"
-            >{text}</Typography>
+                sx={{
+                    fontSize: {
+                        xs: 14,
+                        md: 16
+                    }
+                }}
+            >{(text).slice(0, 150)}...</Typography>
             <Stack
                 direction={'row'}
                 sx={{
@@ -72,6 +78,7 @@ export const Project = ({project}) => {
                 <Typography
                     component={'a'}
                     href={link_demo}
+                    target="_blank"
                     sx={{
                         textDecoration: 'none',
                         fontWeight: 500,
@@ -83,6 +90,7 @@ export const Project = ({project}) => {
                 <Typography
                     component={'a'}
                     href={github_repo}
+                    target="_blank"
                     sx={{
                         textDecoration: 'none',
                         fontWeight: 500,

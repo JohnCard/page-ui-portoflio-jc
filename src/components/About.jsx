@@ -1,10 +1,10 @@
 import { Box, Container, Grid, Stack, Typography } from '@mui/material'
-import joey from '../assets/joey.png'
+import red_sweater from '../assets/red_sweater.png'
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 
-const loremText = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit illo, officia sit tempora ut eveniet rerum molestiae pariatur quas eius mollitia. Sequi, at? Itaque deleniti nisi consectetur, consequatur hic esse!'
+const loremText = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit illo, officia sit tempora ut eveniet rerum molestiae pariatur quas eius mollitia. Sequi, at? Itaque deleniti nisi consectetur, consequatur hic esse! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit illo, officia sit tempora ut eveniet rerum molestiae pariatur quas eius mollitia. Sequi, at? Itaque deleniti nisi consectetur, consequatur hic esse! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit illo, officia sit tempora ut eveniet rerum molestiae pariatur quas eius mollitia. Sequi, at? Itaque deleniti nisi consectetur, consequatur hic esse! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit illo, officia sit tempora ut eveniet rerum molestiae pariatur quas eius mollitia. Sequi, at? Itaque deleniti nisi consectetur, consequatur hic esse!'
 
 export const About = () => {
   return (
@@ -24,55 +24,60 @@ export const About = () => {
       >
         <Grid
           container
-          spacing={4}
           sx={{
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: {
+              sm: 'center'
+            },
+            rowGap: 5,
+            columnGap: 10
           }}
         >
           <Grid
             size={{
               xs: 12,
               sm: 10,
-              md: 7
+              md: 3
             }}
           >
             <Box
+              component={'img'}
+              src={red_sweater}
+              alt='red sweater'
               sx={{
                 width: {
-                  xs: '100%',
-                  sm: '80%'
+                  xs: '80%',
+                  sm: 250
                 },
                 maxHeight: 300,
-                mx: 'auto'
+                display: 'block',
+                mx: 'auto',
+                borderRadius: 3
               }}
-            >
-              <Box
-                component={'img'}
-                src={joey}
-                alt='joey'
-                sx={{
-                  width: '100%',
-                  height: '100%',
-                  display: 'block',
-                  borderRadius: 3
-                }}
-              />
-            </Box>
+            />
           </Grid>
           <Grid
             size={{
               xs: 12,
               sm: 10,
-              md: 4
+              md: 8
             }}
           >
             <Stack
               spacing={1.5}
+              sx={{
+                maxWidth: {
+                  sm: 450,
+                  md: 700
+                },
+                mx: {
+                  sm: 'auto'
+                }
+              }}
             >
               <Typography component={'span'} variant='body2'>SOBRE MI</Typography>
               <Typography component={'h2'} variant='h4'>Conoce mas sobre mi</Typography>
-              <Typography component={'p'} variant='body1'>{(loremText).slice(0,250)}...</Typography>
+              <Typography component={'p'} variant='body1'>{(loremText).slice(0,280)}...</Typography>
               <Stack
                 direction={'row'}
                 sx={{ justifyContent: 'space-between', flexWrap: 'wrap', gap: 2 }}

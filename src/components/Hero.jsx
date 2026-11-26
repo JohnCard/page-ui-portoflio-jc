@@ -5,7 +5,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
-import joey_tribbiani from '../assets/joey_tribbiani.avif'
+import suit from '../assets/photo.jpg'
 
 export const Hero = () => {
   return (
@@ -27,21 +27,27 @@ export const Hero = () => {
           container
           sx={{
             alignItems: 'center',
-            columnGap: 4,
-            rowGap: 6,
-            justifyContent: 'space-evenly'
+            justifyContent: {
+              xs: 'center',
+              md: 'space-between'
+            },
+            rowGap: 6
           }}
         >
           {/* Presentation */}
           <Grid
             size={{
               xs: 12,
-              sm: 7,
+              sm: 10,
               md: 4
             }}
           >
             <Stack
               spacing={2}
+              sx={{
+                maxWidth: 500,
+                mx: 'auto'
+              }}
             >
               <Typography
                 component='h1'
@@ -75,34 +81,25 @@ export const Hero = () => {
           <Grid
             sx={{
               xs: 12,
-              md: 8
+              sm: 10,
+              md: 7
             }}
           >
             <Box
+              component={'img'}
+              src={suit}
+              alt='suit photo'
               sx={{
                 width: {
                   xs: '100%',
-                  md: 420
+                  sm: 370
                 },
-                maxHeight: 300,
-                aspectRatio: '4/5',
-                overflow: 'hidden',
                 borderRadius: 3,
-                mx: 'auto'
+                maxHeight: {
+                  xs: 550
+                }
               }}
-            >
-              <Box
-                component='img'
-                src={joey_tribbiani}
-                alt='Personal photo'
-                sx={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                  display: 'block'
-                }}
-              />
-            </Box>
+            />
           </Grid>
         </Grid>
       </Container>

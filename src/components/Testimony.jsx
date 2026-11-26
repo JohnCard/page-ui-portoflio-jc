@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material'
 import StarIcon from '@mui/icons-material/Star';
 import Grid from '@mui/material/Grid';
 import Stack from '@mui/material/Stack';
-import joey from '../assets/joey.png'
+import photo from '../assets/photo.jpg'
 
 export const Testimony = ({testimony}) => {
     const { name, text, company, occupation, stars } = testimony
@@ -13,6 +13,7 @@ export const Testimony = ({testimony}) => {
             xs: 12,
             sm: 8,
             md: 5,
+            lg: 3.8
         }}
         sx={{
             backgroundColor: '#FFF',
@@ -38,7 +39,7 @@ export const Testimony = ({testimony}) => {
                 component={'img'}
                 width={80}
                 height={80}
-                src={joey}
+                src={photo}
                 alt={name}
                 sx={{
                     borderRadius: '50%'
